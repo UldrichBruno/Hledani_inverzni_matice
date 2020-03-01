@@ -5,12 +5,10 @@
 using namespace std;
 
 int main() {
-    int i=0;
-    int j=0;
     int DIM;
     cout << "Input dimension of square matrix"<<endl;
     cin >> DIM;
-    int matrix[i][j];
+    int matrix[DIM][DIM];
     int x;
     ifstream inFile;
 
@@ -21,21 +19,21 @@ int main() {
     }
 
         while (inFile >> x) {
-            for (int j=0;j<DIM;j++){
-            for (int i = 0; i < DIM; i++) {
-                x >> matrix[i][j];
-                inFile >> x;
-                i = +i;
+            for (int i=0;i<DIM;i++){
+                for (int j=0;j<DIM;j++){
+                   matrix[i][j] = x;
+                    inFile >> x;
+                }
             }
-            j=+j;
-            }
+
         }
-/*    for (int j=0;j<DIM;j++) {
-        for (int i = 0; i, DIM; i++) {
-            cout << matrix[i][j] << " ";
+    for (int i=0;i<DIM;i++){
+        for (int j=0;j<DIM;j++){
+           cout << matrix[i][j] << " ";
         }
+        cout <<endl;
     }
-*/
+
     inFile.close();
         return 0;
 }
