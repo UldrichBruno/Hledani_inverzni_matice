@@ -5,13 +5,11 @@
 
 using namespace std;
 double x;
-
-
-
+int DIM;
 void print_matrix(double matrix[DIM][DIM]);
-void Row_Reduce(double matrix[DIM][DIM]);
+//void Row_Reduce(double matrix[DIM][DIM]);
 
-void print_matrix(double matrix[DIM][DIM]) // Outputs the matrix
+/*void print_matrix(double matrix[DIM][DIM]) // Outputs the matrix
 {
 
     for (int i=0; i<DIM; i++) {
@@ -23,7 +21,7 @@ void print_matrix(double matrix[DIM][DIM]) // Outputs the matrix
 
     cout << endl;
 }
-
+*/
 /*void Row_Reduce(double matrix[DIM][DIM]) {
      int nrows = DIM; // number of rows
      int ncols = DIM; // number of columns
@@ -43,7 +41,7 @@ void print_matrix(double matrix[DIM][DIM]) // Outputs the matrix
                     matrix[r][c] /= d;               // make pivot = 1
                 else
                     matrix[r][c] -= matrix[lead][c] * m;  // make other = 0
-            }
+            } ahoj
         }
 
         lead++;
@@ -63,10 +61,11 @@ void print_matrix(double matrix[DIM][DIM]) // Outputs the matrix
 
 
 int main() {
-    int DIM;
-    double matrix[DIM][DIM];
+
+
     cout << "Input dimension of square matrix" << endl;
     cin >> DIM;
+    double matrix[DIM][DIM];
     ifstream inFile;
 
     inFile.open("C:\\Users\\Uzivatel\\CLionProjects3\\Hledani_inverzni_matice\\matrix.txt");
@@ -93,7 +92,8 @@ int main() {
 
     inFile.close();
 
-    void print_matrix(double matrix[DIM][DIM]);
+
+   // void print_matrix(double matrix[DIM][DIM]);
     //void Row_Reduce(double matrix[DIM][DIM]);
    // void print_matrix(double matrix[DIM][DIM]);
 
