@@ -36,7 +36,7 @@ void Gauss::HST(){
 
 }
 
-void Gauss::print();{
+void Gauss::print(){
 
 }
 
