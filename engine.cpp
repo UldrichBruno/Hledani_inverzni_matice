@@ -1,6 +1,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -37,7 +38,14 @@ void Gauss::HST(){
 }
 
 void Gauss::print(){
+    for (int i=0; i<DIM; i++) {
+        for (int j=0; j<DIM; j++) {
+            cout << setw(7) << setprecision(3) << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
 
+    cout << endl;
 }
 
 void Gauss::read(int inputDIM, string path){
