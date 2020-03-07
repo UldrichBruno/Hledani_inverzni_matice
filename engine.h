@@ -121,10 +121,12 @@ void Gauss::transponate() {
     steps[numberOfstep].coef = 0;
     steps[numberOfstep].line = 0;
     numberOfstep++;
-
+    float opElement;
     for (int i = 0; i < DIM; i++) {
-        for (int j = 0; j < DIM; j++) {
-            matrix[j][i] = matrix[i][j];
+        for (int j = i; j < DIM; j++) {
+            opElement = matrix[i][j];
+            matrix [i][j] = matrix [j][i];
+            matrix [j][i] = opElement;
         }
     }
 }

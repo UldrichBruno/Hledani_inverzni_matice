@@ -16,8 +16,8 @@ int main() {
     g.HST();
     g.print();
     g.transponate();
-   // g.HST();
-   // g.transponate();
+    g.HST();
+    g.transponate();
     g.print();
     return 0;
 }
