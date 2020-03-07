@@ -7,11 +7,13 @@ int main() {
     cout << "Input dim of matrix";
     cin >> inputDIM;
 
-    string path;
+    string path;
     cout << "Input path";
     cin >> path;
 
-    g.read(3,path);
+    g.read(inputDIM,path);
+    g.print();
+    g.HST();
     g.print();
     return 0;
 }
