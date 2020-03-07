@@ -7,7 +7,7 @@ int main() {
     cout << "Input dim of matrix";
     cin >> inputDIM;
 
-    string path;        //C:/Users/Uzivatel/CLionProjects3/Hledani_inverzni_matice/matrix.txt
+    string path;        // C:/Users/Uzivatel/CLionProjects3/Hledani_inverzni_matice/matrix.txt
     cout << "Input path";
     cin >> path;
 
@@ -18,6 +18,8 @@ int main() {
     g.transponate();
     g.HST();
     g.transponate();
+    g.print();
+    g.makeOnes();
     g.print();
     return 0;
 }

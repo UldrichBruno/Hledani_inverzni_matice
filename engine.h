@@ -34,6 +34,7 @@ public:
     void moveLine(int line);
     void nullateElement(int lineNullHead, int lineReadHead);
     void transponate();
+    void makeOnes();
 };
 
 void Gauss::nullateElement (int lineNullHead, int lineReadHead){
@@ -127,6 +128,19 @@ void Gauss::transponate() {
             opElement = matrix[i][j];
             matrix [i][j] = matrix [j][i];
             matrix [j][i] = opElement;
+        }
+    }
+}
+
+void Gauss::makeOnes() {
+    steps[numberOfstep].typeOfStep = 3;
+    steps[numberOfstep].coef = 0;
+    steps[numberOfstep].line = 0;
+    numberOfstep++;
+
+    for (int i = 0; i < DIM; i++) {
+        for (int j = i; j < DIM; j++) {
+            matrix[i][j] = matrix[i][j] / matrix[i][i];
         }
     }
 }
