@@ -21,5 +21,7 @@ int main() {
     g.print();
     g.makeOnes();
     g.print();
+    g.transform();
+    g.print();
     return 0;
 }
