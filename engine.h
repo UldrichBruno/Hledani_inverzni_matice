@@ -27,12 +27,6 @@ public:
 };
 
 void Gauss::HST(){
-    for (int i = 0; i < DIM; i++) {
-        for (int j = 0; j < DIM; j++) {
-            cout << matrix[i][j] << " ";
-        }
-        cout << endl;
-    }
 
 }
 
