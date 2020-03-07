@@ -7,7 +7,7 @@ using namespace std;
 
 struct step{
     int typeOfStep;
-    float coef;
+    double coef;
     unsigned int line;
 
 };
@@ -15,10 +15,10 @@ struct step{
 
 class Gauss{
     int DIM = 0;
-    float matrix[MAX_SIZE_OF_MATRIX][MAX_SIZE_OF_MATRIX];
+    double matrix[MAX_SIZE_OF_MATRIX][MAX_SIZE_OF_MATRIX];
     int numberOfstep = 0;
     struct step steps[];
-    float findCoeff (int lineNullHead, int lineReadHead ){
+    double findCoeff (int lineNullHead, int lineReadHead ){
 
         return (-1 * (matrix[lineNullHead][lineReadHead] / matrix[lineReadHead][lineReadHead]));
 
@@ -101,7 +101,7 @@ void Gauss::moveLine(int lineReadHead){
     steps[numberOfstep].coef = 0;
     steps[numberOfstep].line = lineReadHead;
     numberOfstep++;
-    float opmatrix[MAX_SIZE_OF_MATRIX];
+    double opmatrix[MAX_SIZE_OF_MATRIX];
     for (int k = 0; k < DIM; k++){
         opmatrix[k]=matrix[lineReadHead][k];
     }
@@ -121,7 +121,7 @@ void Gauss::transponate() {
     steps[numberOfstep].coef = 0;
     steps[numberOfstep].line = 0;
     numberOfstep++;
-    float opElement;
+    double opElement;
     for (int i = 0; i < DIM; i++) {
         for (int j = i; j < DIM; j++) {
             opElement = matrix[i][j];
