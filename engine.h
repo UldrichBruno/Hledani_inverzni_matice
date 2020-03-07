@@ -6,6 +6,7 @@
 using namespace std;
 
 struct step{
+    int typeOfStep;
     float koef;
     unsigned int line;
 
@@ -15,19 +16,32 @@ struct step{
 class Gauss{
     int DIM;
     int RealSizeOfMatrix = 0;
-    float matrix[MAX_SIZE_OF_MATRIX ][MAX_SIZE_OF_MATRIX ];
+    float matrix[MAX_SIZE_OF_MATRIX][MAX_SIZE_OF_MATRIX];
     struct step steps[];
+    bool check(int line, int col){
+        return matrix[line][col]!=0;
+    }
 public:
 
     void HST();
     void read(int inputDIM, string path);
     void print();
-
-
+    void moveLine(int line);
 };
 
 void Gauss::HST(){
-
+    for (int i=0; i<DIM; i++) {         //NullHead
+        Start:
+        if (check(i,i) ==1) {
+            for (int x = i + 1; x < DIM; x++) {    //ReadHead
+                nullateElement(x,i);
+            }
+        }
+      else{
+        moveLine(i);
+        i=i+1;
+          goto Start;
+      }
 }
 
 void Gauss::print(){
@@ -63,4 +77,18 @@ void Gauss::read(int inputDIM, string path){
     }
 
     inFile.close();
+}
+
+void Gauss::moveLine(int line){
+    for (int j = 0; j < DIM; j++) {
+        float opmatrix[line][j];
+        matrix[line][j]=opmatrix[line][j];
+        matrix[DIM][j]=matrix[line][j];
+    }
+    for (int k=0; k<DIM-line;k++){
+        float op2matrix[line+k+1][k];
+        matrix[line-1][k]=op2matrix[line][k];
+    }
+
+
 }
