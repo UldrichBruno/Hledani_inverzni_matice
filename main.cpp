@@ -14,6 +14,9 @@ int main() {
     g.read(inputDIM,path);
     g.print();
     g.HST();
+    g.print();
+    g.transponate();
+    g.HST();
     g.transponate();
     g.print();
     return 0;
