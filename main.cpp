@@ -5,8 +5,13 @@ int main() {
     int inputDIM;
     Gauss g;
     cout << "Input dim of matrix";
-    cin>>inputDIM;
-    g.read(3,"D:/Users/Dokumenty/GitHub/Hledani_inverzni_matice/matrix.txt");
+    cin >> inputDIM;
+
+    string path;
+    cout << "Input path";
+    cin >> path;
+
+    g.read(3,path);
     g.print();
     return 0;
 }
