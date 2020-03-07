@@ -6,7 +6,7 @@
 using namespace std;
 
 struct step{
-    float keof;
+    float koef;
     unsigned int line;
 
 };
@@ -15,11 +15,10 @@ struct step{
 class Gauss{
     int DIM;
     int RealSizeOfMatrix = 0;
-    struct step steps[];
     float matrix[MAX_SIZE_OF_MATRIX ][MAX_SIZE_OF_MATRIX ];
-
+    struct step steps[];
 public:
-    Gauss();
+
     void HST();
     void read(int inputDIM, string path);
     void print();

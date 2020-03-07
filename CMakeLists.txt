@@ -3,4 +3,4 @@ project(Hledani_inverzni_matice)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Hledani_inverzni_matice main.cpp engine.cpp)
+add_executable(Hledani_inverzni_matice main.cpp engine.h)
