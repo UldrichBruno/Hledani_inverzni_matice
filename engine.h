@@ -33,6 +33,7 @@ public:
     void print();
     void moveLine(int line);
     void nullateElement(int lineNullHead, int lineReadHead);
+    void transponate(int i, int j);
 };
 
 void Gauss::nullateElement (int lineNullHead, int lineReadHead){
@@ -47,8 +48,8 @@ void Gauss::nullateElement (int lineNullHead, int lineReadHead){
 }
 
 void Gauss::HST(){
+    Start:
     for (int i=0; i<DIM; i++) {         //ReadHead
-        Start:
         if (check(i,i) ==1) {
             for (int x = i + 1; x < DIM; x++) {    //NullHead
                 nullateElement(x,i);
@@ -95,20 +96,35 @@ void Gauss::read(int inputDIM, string path){
     inFile.close();
 }
 
-void Gauss::moveLine(int lineNullHead){
+void Gauss::moveLine(int lineReadHead){
     steps[numberOfstep].typeOfStep = 1;
     steps[numberOfstep].coef = 0;
-    steps[numberOfstep].line = lineNullHead;
+    steps[numberOfstep].line = lineReadHead;
     numberOfstep++;
-    for (int j = 0; j < DIM; j++) {
-        float opmatrix[lineNullHead][j];
-        matrix[lineNullHead][j]=opmatrix[lineNullHead][j];
-        matrix[DIM][j]=matrix[lineNullHead][j];
-    }
-    for (int k=0; k<DIM-lineNullHead;k++){
-        float op2matrix[lineNullHead+k+1][k];
-        matrix[lineNullHead-1][k]=op2matrix[lineNullHead][k];
+    float opmatrix[MAX_SIZE_OF_MATRIX];
+    for (int k = 0; k < DIM; k++){
+        opmatrix[k]=matrix[lineReadHead][k];
     }
 
+    for (int i=lineReadHead; i<DIM; i++) {
+            for (int k = 0; k < DIM; k++){
+                matrix[i][k]=matrix[i+1][k];
+            }
+        }
+    for (int k = 0; k < DIM; k++){
+        matrix[DIM][k] = opmatrix[k];
+    }
+}
 
+void Gauss::transponate() {
+    steps[numberOfstep].typeOfStep = 2;
+    steps[numberOfstep].coef = 0;
+    steps[numberOfstep].line = 0;
+    numberOfstep++;
+
+    for (int i = 0; i < DIM; i++) {
+        for (int j = 0; j < DIM; j++) {
+            matrix[j][i] = matrix[i][j];
+        }
+    }
 }
