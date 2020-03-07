@@ -14,8 +14,7 @@ struct step{
 #define MAX_SIZE_OF_MATRIX 50
 
 class Gauss{
-    int DIM;
-    int RealSizeOfMatrix = 0;
+    int DIM = 0;
     float matrix[MAX_SIZE_OF_MATRIX][MAX_SIZE_OF_MATRIX];
     int numberOfstep = 0;
     struct step steps[];
