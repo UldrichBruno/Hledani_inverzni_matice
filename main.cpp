@@ -4,7 +4,7 @@
 int main() {
     int inputDIM;
     Gauss g;
-    cout << "Input dim of matrix";
+    cout << "Input dimension of matrix";
     cin >> inputDIM;
 
     string path;        // C:/Users/Uzivatel/CLionProjects3/Hledani_inverzni_matice/matrix.txt
@@ -21,7 +21,7 @@ int main() {
     g.print();
     g.makeOnes();
     g.print();
-    g.transform();
-    g.print();
+ //   g.transform();
+  //   g.print();
     return 0;
 }
