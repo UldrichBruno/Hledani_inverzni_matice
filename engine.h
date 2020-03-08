@@ -27,7 +27,7 @@ class Gauss {
     }
 
     bool checkSingular(int numOfSteps, int DIM){
-        return numOfSteps<DIM;
+        return numOfSteps<DIM+3;
     }
 
 public:
@@ -38,6 +38,7 @@ public:
     void nullateElement(int lineNullHead, int lineReadHead);
     void transponate();
     void makeOnes();
+    void transform();
 };
 
 void Gauss::nullateElement(int lineNullHead, int lineReadHead) {
@@ -79,7 +80,7 @@ void Gauss::print() {
         }
         cout << endl;
     }
-    cout << endl;
+    cout <<"--------------------------------------------------"<< endl;
 }
 
 void Gauss::read(int inputDIM, string path) {
@@ -155,7 +156,7 @@ void Gauss::makeOnes() {
         }
     }
 }
-/*void Gauss::transform(){
+void Gauss::transform(){
     float Imatrix[MAX_SIZE_OF_MATRIX][MAX_SIZE_OF_MATRIX];
     for (int i=0;i<DIM;i++)
         for (int j=0;j<DIM;j++) {
@@ -206,4 +207,4 @@ void Gauss::makeOnes() {
                 exit(3);
         }
     }
-}*/
+}

@@ -12,16 +12,20 @@ int main() {
     cin >> path;
 
     g.read(inputDIM,path);
+    cout <<"Given matrix"<<endl;
     g.print();
     g.HST();
+    cout <<"Upper triangular matrix:"<<endl;
     g.print();
     g.transponate();
     g.HST();
     g.transponate();
+    cout <<"Lower triangular matrix"<<endl;
     g.print();
     g.makeOnes();
+    cout <<"Identity matrix:"<<endl;
     g.print();
- //   g.transform();
-  //   g.print();
+    g.transform();
+    g.print();
     return 0;
 }
